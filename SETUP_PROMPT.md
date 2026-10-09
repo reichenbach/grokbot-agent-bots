@@ -7,33 +7,37 @@ Before you start:
 - Install and sign in to each coding agent you want on those computers. For example, Claude Code works with a Claude Pro or Max plan, and Codex works with a ChatGPT Plus or Pro plan.
 - Optional: in Grok Bot Settings, on the Computer tab, set Execution on Local Computer to "Always allow" so the bots don't wait for a tap on every command.
 
-Paste everything below the line into your main Grok Bot chat. Edit the agent list first.
+Paste everything below the line into your main Grok Bot chat. It will ask which computers and agents you want.
 
 ---
 
 Set up a teammate bot for each coding agent below. Each bot drives that agent on my own computers, in my project folders.
 
-**Agents I want** (edit this list):
+**1. Ask me first, then check only what I pick.**
+Don't assume anything about my computers or my agents. Start by asking me two questions, ideally as pick-lists:
+- **Which computers should these bots use?** List my connected computers and show which are online. I may have several (personal and work), and only some belong in this setup. Never use a computer I didn't pick, even if it's online.
+- **Which agent bots do I want?** Offer the agents you find installed on the computers I picked, with a test of each. Common ones and their headless commands:
 
 | Bot name | Agent | Headless command (run inside the project folder) |
 |---|---|---|
 | ClaudeBot | Claude Code | `claude -p "<task>" --output-format text < /dev/null` |
 | CodexBot | Codex | `codex exec --sandbox workspace-write "<task>" < /dev/null` |
 | CursorBot | Cursor CLI | `cursor-agent -p "<task>" --trust --output-format text < /dev/null` |
-| GeminiBot | Gemini CLI | `gemini -p "<task>" < /dev/null` |
-| LocalBot | any local CLI agent | the command you use, run non-interactively |
+| GeminiBot | Gemini CLI | `gemini -p "<task>" --skip-trust < /dev/null` |
+| LocalBot | any local CLI agent (Aider, Ollama-based, etc.) | the command you use, run non-interactively |
 
-If I list an agent and you don't know its headless command, check its `--help` output and ask me before guessing.
+If an agent isn't in the table, check its `--help` output for a non-interactive mode and ask me before guessing.
 
-**1. Check my computers.**
-List my connected computers. On each one, check that every listed agent's command exists (`--version`). Then run one tiny real test prompt per agent from `/tmp`, such as "Reply with exactly: OK". A "logged in" status can still fail on a real prompt.
+Then, only on the computers I picked, check that each chosen agent's command exists (`--version`) and run one tiny real test prompt from `/tmp`, such as "Reply with exactly: OK". A "logged in" status can still fail on a real prompt. Tell me which pass and which need me.
 
 Gotchas:
 - Always redirect stdin from `/dev/null`, or the agents sit waiting for input.
 - On a Mac, run commands through `zsh -lic '...'` so PATH loads. macOS has no `timeout` command.
-- Some agents ask whether to trust the folder before running headless. Cursor's CLI needs `--trust`.
-- If you see a login or session-expired error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
+- Some agents ask whether to trust the folder before running headless. Cursor needs `--trust`, and Gemini needs `--skip-trust`.
+- If you see a login, session-expired or "account not eligible" error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
 - If you see a "model not supported" error, the agent's config file probably pins a model my plan can't use. Show me the line and ask before changing it, and back up the file first.
+- Warnings about unrelated MCP servers needing sign-in can be ignored unless they block the test.
+- Each computer uses whatever account its agents are signed in to (work accounts on work machines, personal on personal). Keep work and personal projects on their own computers.
 
 Then ask me which project folders on which computer each bot may work in, and save that map.
 

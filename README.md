@@ -10,9 +10,9 @@ It's a human-in-the-loop setup: you approve, the agents do the work.
 
 1. Install the Grok Bot desktop app on each computer that holds code, and sign in.
 2. Install the coding agents you want there and sign in to each.
-3. Open [SETUP_PROMPT.md](SETUP_PROMPT.md), edit the agent list, and paste everything below its line into your main Grok Bot chat.
+3. Paste everything below the line in [SETUP_PROMPT.md](SETUP_PROMPT.md) into your main Grok Bot chat.
 
-Your bot checks your machines, asks which folders each agent bot may use, creates the bots, and runs a small test so you can watch two of them work together.
+Your bot asks which computers and agents you want, tests them, asks which folders each agent bot may use, creates the bots, and runs a small test so you can watch two of them work together.
 
 ## Rules the bots follow
 
