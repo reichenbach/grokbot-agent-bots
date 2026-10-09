@@ -36,7 +36,7 @@ Gotchas:
 - If you see a login, session-expired or "account not eligible" error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
 - If you see a "model not supported" error, the agent's config file probably pins a model my plan can't use. Show me the line and ask before changing it, and back up the file first.
 - Warnings about unrelated MCP servers needing sign-in can be ignored unless they block the test.
-- Each computer uses whatever account its agents are signed in to (work accounts on work machines, personal on personal). Keep work and personal projects on their own computers.
+- **Keep accounts separate.** Before the first task, confirm which account each agent is signed in to on each computer and show me. Work accounts belong on work machines only, and personal accounts on personal machines only. Never set up a bot on a computer whose agent is signed in to the wrong account; tell me instead.
 
 Then ask me which project folders on which computer each bot may work in, and save that map.
 
@@ -61,4 +61,4 @@ Then ask me which project folders on which computer each bot may work in, and sa
 My main bot, or my Chief of Staff bot if I have one, assigns tasks to the agent bots. It picks the best one for each job, or sends the same task to two of them and compares the results. It collects their reports and brings me one summary with the decisions I need to make. It never merges or pushes for me. Also set up a weekday end-of-day routine where my main bot reviews what every agent bot did, flags anything stuck or anything that touched main, and only messages me when something needs me.
 
 **4. Prove it works.**
-Give one bot a small, harmless task in a real project, such as "add a one-line comment at the top of the README explaining what this repo is," on a new branch. Have it ask a second bot directly to review the diff read-only and reply with keep or change plus one sentence. Both report back to you. Show me the whole exchange and the branch.
+Create a throwaway demo repo, for example `~/agent-bots-demo` with a short README, on one of the computers I picked, so the test and any screenshots never show my real code. Give one bot a small, harmless task there, such as "add a one-line comment at the top of the README explaining what this repo is," on a new branch. Have it ask a second bot directly to review the diff read-only and reply with keep or change plus one sentence. Both report back to you. Show me the whole exchange and the branch.
