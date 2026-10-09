@@ -1,6 +1,6 @@
 # Grok Bot agent bots
 
-Give your Grok Bot a crew of coding-agent teammates: one bot per coding agent you already use. That can be Claude Code, Codex, Cursor's CLI, Gemini CLI, a local model, or anything with a command-line mode.
+Give your Grok Bot a crew of coding-agent teammates: one bot per coding agent you already use. That can be Claude Code, Codex, Cursor's CLI, a local model, or anything with a command-line mode.
 
 They work **on your own computers, in your local project folders**. Your code doesn't need to be on GitHub. Your main Grok Bot assigns tasks. Each agent bot creates a branch, runs its agent, can ask another bot for a review, and checks in after every task. Nothing is pushed, merged or posted without your OK.
 

@@ -1,6 +1,6 @@
 # Grok Bot agent bots: setup prompt
 
-Give your Grok Bot a crew of coding-agent teammates. Each one drives a coding agent you already have installed, such as Claude Code, Codex, Gemini CLI, a local model, or anything else with a command-line mode. They work on your own computers, in the folders where your code actually lives. Your code doesn't have to be on GitHub.
+Give your Grok Bot a crew of coding-agent teammates. Each one drives a coding agent you already have installed, such as Claude Code, Codex, Cursor's CLI, a local model, or anything else with a command-line mode. They work on your own computers, in the folders where your code actually lives. Your code doesn't have to be on GitHub.
 
 Before you start:
 - Install the Grok Bot desktop app and sign in on every computer that holds code.
@@ -23,7 +23,6 @@ Don't assume anything about my computers or my agents. Start by asking me two qu
 | ClaudeBot | Claude Code | `claude -p "<task>" --output-format text < /dev/null` |
 | CodexBot | Codex | `codex exec --sandbox workspace-write "<task>" < /dev/null` |
 | CursorBot | Cursor CLI | `cursor-agent -p "<task>" --trust --output-format text < /dev/null` |
-| GeminiBot | Gemini CLI | `gemini -p "<task>" --skip-trust < /dev/null` |
 | LocalBot | any local CLI agent (Aider, Ollama-based, etc.) | the command you use, run non-interactively |
 
 If an agent isn't in the table, check its `--help` output for a non-interactive mode and ask me before guessing.
@@ -33,7 +32,7 @@ Then, only on the computers I picked, check that each chosen agent's command exi
 Gotchas:
 - Always redirect stdin from `/dev/null`, or the agents sit waiting for input.
 - On a Mac, run commands through `zsh -lic '...'` so PATH loads. macOS has no `timeout` command.
-- Some agents ask whether to trust the folder before running headless. Cursor needs `--trust`, and Gemini needs `--skip-trust`.
+- Some agents ask whether to trust the folder before running headless. Cursor needs `--trust`.
 - If you see a login, session-expired or "account not eligible" error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
 - If you see a "model not supported" error, the agent's config file probably pins a model my plan can't use. Show me the line and ask before changing it, and back up the file first.
 - Warnings about unrelated MCP servers needing sign-in can be ignored unless they block the test.
