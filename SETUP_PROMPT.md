@@ -19,6 +19,7 @@ Set up a teammate bot for each coding agent below. Each bot drives that agent on
 |---|---|---|
 | ClaudeBot | Claude Code | `claude -p "<task>" --output-format text < /dev/null` |
 | CodexBot | Codex | `codex exec --sandbox workspace-write "<task>" < /dev/null` |
+| CursorBot | Cursor CLI | `cursor-agent -p "<task>" --trust --output-format text < /dev/null` |
 | GeminiBot | Gemini CLI | `gemini -p "<task>" < /dev/null` |
 | LocalBot | any local CLI agent | the command you use, run non-interactively |
 
@@ -30,6 +31,7 @@ List my connected computers. On each one, check that every listed agent's comman
 Gotchas:
 - Always redirect stdin from `/dev/null`, or the agents sit waiting for input.
 - On a Mac, run commands through `zsh -lic '...'` so PATH loads. macOS has no `timeout` command.
+- Some agents ask whether to trust the folder before running headless. Cursor's CLI needs `--trust`.
 - If you see a login or session-expired error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
 - If you see a "model not supported" error, the agent's config file probably pins a model my plan can't use. Show me the line and ask before changing it, and back up the file first.
 
