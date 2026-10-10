@@ -62,3 +62,11 @@ My main bot, or my Chief of Staff bot if I have one, assigns tasks to the agent 
 
 **4. Prove it works.**
 Create a throwaway demo repo, for example `~/agent-bots-demo` with a short README, on one of the computers I picked, so the test and any screenshots never show my real code. Give one bot a small, harmless task there, such as "add a one-line comment at the top of the README explaining what this repo is," on a new branch. Have it ask a second bot directly to review the diff read-only and reply with keep or change plus one sentence. Both report back to you. Show me the whole exchange and the branch.
+
+**5. Capture screenshots to share (optional).**
+If I want images for a post or the repo, help me capture them safely:
+- Only capture the throwaway demo repo and the agent bots' demo messages. Never capture real projects, other bots, emails, file paths or anything personal.
+- Ask the bots to keep their demo messages short and generic, because they'll be screenshotted.
+- If I'll take the screenshots myself: tell me which chat to open and what to scroll to, one shot at a time. On a Mac, press Cmd+Shift+4 and drag around just the chat messages, leaving out the sidebar. On Windows, press Win+Shift+S, and on Linux, use the screenshot tool's area mode. Tell me to type "done" in **your** chat, not the bot's chat, so the bots don't get confused.
+- If you capture my screen yourself: first check that the app has screen-recording permission. On a Mac, the permission prompt can hide behind the app window. Capture the whole screen, then crop to just the conversation.
+- Before showing me any image, check it for names, emails, paths, project names, other bots and the Dock or taskbar. Crop or blur anything you find. Show me every image for approval before it goes anywhere.
