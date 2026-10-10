@@ -36,6 +36,7 @@ Gotchas:
 - If you see a login, session-expired or "account not eligible" error, tell me which computer and agent need a sign-in. Don't try to fix it yourself.
 - If you see a "model not supported" error, the agent's config file probably pins a model my plan can't use. Show me the line and ask before changing it, and back up the file first.
 - Warnings about unrelated MCP servers needing sign-in can be ignored unless they block the test.
+- **Hand off work as a task, not an FYI.** When one bot passes work to another, send it as a task that needs action (priority). A quiet FYI won't wake the next bot, so it never starts.
 - **Keep accounts separate.** Before the first task, confirm which account each agent is signed in to on each computer and show me. Work accounts belong on work machines only, and personal accounts on personal machines only. Never set up a bot on a computer whose agent is signed in to the wrong account; tell me instead.
 
 Then ask me which project folders on which computer each bot may work in, and save that map.

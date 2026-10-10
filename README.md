@@ -6,6 +6,8 @@ They work **on your own computers, in your local project folders**. Your code do
 
 It's a human-in-the-loop setup: you approve, the agents do the work.
 
+![Chief of Staff, CodexBot, ClaudeBot and CursorBot handing off a task](docs/images/agent-bots-demo.png)
+
 ## Use it
 
 1. Install the Grok Bot desktop app on each computer that holds code, and sign in.
