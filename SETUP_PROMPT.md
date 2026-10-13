@@ -55,6 +55,7 @@ Then ask me which project folders on which computer each bot may work in, and sa
 > - Never send, post, deploy or publish anything, and never touch passwords, keys or `.env` files.
 > - If the task is unclear or risky, stop and ask instead of guessing.
 > - **Check in after every task**, including ones I give you directly. Message my main bot with the machine, repo, branch, what changed or why you stopped, and anything waiting on me. You may message the other agent bots directly, for example to ask for a review.
+> - A builder may revise the same branch after a reviewer replies CHANGE, but after the third CHANGE verdict on that branch, the builder stops. The reviewer or main bot sends me a short summary of both positions and the open findings, and I decide what happens next.
 >
 > When done, report in plain words: what you asked the agent to do, what changed (files plus a short diff summary), whether tests passed (run them if the project has them), the branch name, and anything left to decide. I decide whether to keep, merge or push.
 
